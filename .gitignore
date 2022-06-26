@@ -1,0 +1,7 @@
+# ignore the folder with the following structure
+.idea/
+
+# ignore the number of files as follows
+.doc
+.xlsx
+.text
