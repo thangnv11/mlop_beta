@@ -1,5 +1,6 @@
 # ignore the folder with the following structure
 .idea/
+.DS_Store
 
 # ignore the number of files as follows
 .doc
