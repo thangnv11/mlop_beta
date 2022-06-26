@@ -1,8 +1,6 @@
-# ignore the folder with the following path
+# ignore the folder with the followign structure
 .idea/
-
 # ignore the number of files as follows
-
 .doc
-.text
 .xlsx
+.text
