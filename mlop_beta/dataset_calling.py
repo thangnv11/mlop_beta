@@ -7,7 +7,7 @@ dated: August 31th, 2021
 
 def load_data(name_dataset='index',
              verbose=True,
-             address="https://raw.githubusercontent.com/phuongvnguyen/pypa/main/src/datasets/",):
+             address="https://raw.githubusercontent.com/thangnv11/mlop_beta/main/datasets/",):
     """
     This function is to load dataset from the git repository
     :param name_dataset: name of dataset (str)
