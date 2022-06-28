@@ -3,7 +3,9 @@ module: datset_calling is to import dataset
 authored: Phuong V. Nguyen
 dated: August 31th, 2021
 """
-
+import pandas as pd
+import os.path
+from IPython.display import display, HTML, clear_output, update_display
 
 def load_data(name_dataset='index',
              verbose=True,
@@ -15,10 +17,6 @@ def load_data(name_dataset='index',
     :param address: url of dataset in the git repo
     :return data: loaded dataset (pandas.DataFrame)
     """
-    import pandas as pd
-    import os.path
-    from IPython.display import display, HTML, clear_output, update_display
-
     extension = ".csv"
     filename = str(name_dataset) + extension
     full_address = address + filename
