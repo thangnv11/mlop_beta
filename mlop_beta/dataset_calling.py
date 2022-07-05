@@ -3,9 +3,11 @@ module: datset_calling is to import dataset
 authored: Phuong V. Nguyen
 dated: August 31th, 2021
 """
+from IPython.display import display, HTML, clear_output, update_display
 import pandas as pd
 import os.path
-from IPython.display import display, HTML, clear_output, update_display
+import logging
+
 
 def load_data(name_dataset='credit',
              verbose=True,
@@ -19,9 +21,8 @@ def load_data(name_dataset='credit',
     """
     extension = ".csv"
     filename = str(name_dataset) + extension
-    print(filename)
     full_address = address + filename
-    print(full_address)
+    logging.info('data loading\n...')
     data = pd.read_csv(full_address)
     if verbose:
         display(data.head())
