@@ -7,7 +7,7 @@ import pandas as pd
 import os.path
 from IPython.display import display, HTML, clear_output, update_display
 
-def load_data(name_dataset='index',
+def load_data(name_dataset='credit',
              verbose=True,
              address="https://raw.githubusercontent.com/thangnv11/mlop_beta/main/datasets/",):
     """
@@ -19,7 +19,9 @@ def load_data(name_dataset='index',
     """
     extension = ".csv"
     filename = str(name_dataset) + extension
+    print(filename)
     full_address = address + filename
+    print(full_address)
     data = pd.read_csv(full_address)
     if verbose:
         display(data.head())
