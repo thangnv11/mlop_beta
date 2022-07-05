@@ -1,0 +1,7 @@
+pandas_profiling
+sweetviz
+autoviz
+dtale
+xgboost
+optuna
+seaborn

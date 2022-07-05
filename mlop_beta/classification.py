@@ -8,7 +8,9 @@ import warnings
 import matplotlib.pyplot as plt
 import seaborn as sns
 import optuna
+import time
 # pre-process
+from IPython.core.display import display
 from sklearn.model_selection import train_test_split
 # Linear algorithm
 from sklearn.linear_model import LogisticRegression
@@ -53,15 +55,16 @@ def model_list():
               ('LDA', LinearDiscriminantAnalysis()),
               ('QDA', QuadraticDiscriminantAnalysis()),
               ('SGDC', SGDClassifier()),
-              ('GNB', GaussianNB()),
-              ('SVC', SVC()),
-              ('KNN', KNeighborsClassifier()),
-              ('DT', DecisionTreeClassifier()),
-              ('ADBoost', AdaBoostClassifier()),
-              ('GBBoost', GradientBoostingClassifier()),
-              ('XGBoost', XGBClassifier(eval_metric='logloss')),
-              ('RanForest', RandomForestClassifier()),
-              ('ExTree', ExtraTreesClassifier())]
+              #('GNB', GaussianNB()),
+              #('SVC', SVC()),
+              #('KNN', KNeighborsClassifier()),
+              #('DT', DecisionTreeClassifier()),
+              #('ADBoost', AdaBoostClassifier()),
+              #('GBBoost', GradientBoostingClassifier()),
+              #('XGBoost', XGBClassifier(eval_metric='logloss')),
+              #('RanForest', RandomForestClassifier()),
+              #('ExTree', ExtraTreesClassifier())
+              ]
     return models
 
 
@@ -90,6 +93,7 @@ def models_comparer(list_of_model, x, y):
     """
     results = []
     names = []
+    start = time.time()
     for name, model in list_of_model:
         kfold = KFold(n_splits=10, random_state=7)
         cv_results = cross_val_score(model, x, y.values.ravel(),
@@ -98,6 +102,8 @@ def models_comparer(list_of_model, x, y):
         names.append(name)
         msg = '%s: %f (%f)' % (name, cv_results.mean(), cv_results.std())
         print(msg)
+    end = time.time()
+    print('time: %f mins'%((end-start)/60))
     plot_result(results, names)
     return results, names
 

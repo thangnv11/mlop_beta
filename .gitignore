@@ -9,4 +9,5 @@
 
 # ignore pycharm file
 mlop_beta/__pycache__/
+
 notebook/.ipynb_checkpoints/tutorial-checkpoint.ipynb
