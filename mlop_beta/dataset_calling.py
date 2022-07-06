@@ -9,7 +9,7 @@ import os.path
 import logging
 
 
-def load_data(name_dataset='Iris',
+def load_data(name_dataset='credit',
              verbose=True,
              address="https://raw.githubusercontent.com/thangnv11/mlop_beta/main/datasets/",):
     """
